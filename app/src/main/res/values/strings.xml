@@ -1,14 +1,17 @@
 <resources>
-    <string name="app_name">PokeApp</string>
+    <string name="app_name">Sample Chart</string>
     <string name="montserrat_regular" >fonts/Montserrat-Regular.ttf</string>
     <string name="search">Search</string>
-    <string name="poked_x">Pokedéx</string>
-    <string name="pokemons">Pokemons</string>
-    <string name="berries">Berries</string>
-    <string name="moves">Moves</string>
-    <string name="title_moves">Moves</string>
-    <string name="title_berries">Berries</string>
-    <string name="title_pokedex">Pokédex</string>
-    <string name="title_pokemons">Pokemons</string>
-    <string name="title_pokemon_details">Pokemon Details - %s</string>
+    <string name="hist_rico_btc">Histórico BTC</string>
+    <string name="produtos">Produtos</string>
+    <string name="logout">Logout</string>
+    <string name="title_chart">Histórico</string>
+    <string name="title_history">Histórico do BTC (Última Semana)</string>
+    <string name="update">Atualizar</string>
+    <string name="facebook_app_id">155379508371562</string>
+    <string name="fb_login_protocol_scheme">fb155379508371562</string>
+    <string name="ver_produtos">Ver produtos</string>
+    <string name="title_product">Produtos</string>
+    <string name="title_product_list">Lista de produtos</string>
+    <string name="error_internet">Ops! Parece que você está desconectado!</string>
 </resources>

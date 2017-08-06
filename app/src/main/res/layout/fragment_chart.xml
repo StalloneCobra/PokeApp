@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="me.gunna.exemploteste.androidapp.viewmodel.ChartScreenViewModel"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:text="@string/title_history"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="@{!viewModel.isLoading}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:text="@{viewModel.lastUpdate}"
+                android:layout_height="wrap_content" />
+            <com.db.chart.view.BarChartView
+                android:padding="20dp"
+                xmlns:chart="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/myChart"
+                chart:chart_labelColor="@color/colorPrimaryDark"
+                chart:chart_axisColor="@color/colorPrimaryDark"
+                chart:theme="@style/AppTheme"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+            <Button
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="@{(v) -> viewModel.onClickUpdate()}"
+                android:text="@string/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            tools:visibility="invisible"
+            android:visibility="@{viewModel.isLoading}"
+            app:indicatorName="TriangleSkewSpinIndicator"
+            app:indicatorColor="@color/colorPrimaryDark"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</layout>

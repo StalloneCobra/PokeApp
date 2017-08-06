@@ -1,9 +1,11 @@
 package me.gunna.exemploteste.androidapp.ui.activity;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
@@ -70,5 +72,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         };
         toggle.syncState();
         return  toggle;
+    }
+
+    public static void start(Context context) {
+        Intent intent = new Intent(context,MainActivity.class);
+        context.startActivity(intent);
     }
 }

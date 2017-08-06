@@ -11,13 +11,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Daniel on 18/07/17.
  */
 
-public class PokeAppService {
+public class SampleAppService {
 
-    private static IPokeAppService sInstance;
+    private static ISampleAppService sInstance;
 
 
 
-    public static IPokeAppService getInstance(){
+    public static ISampleAppService getInstance(){
         if(sInstance == null)
             createIntance();
 
@@ -41,9 +41,11 @@ public class PokeAppService {
                 .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create())
                 .build();
 
-        sInstance = retrofitInstance.create(IPokeAppService.class);
+        sInstance = retrofitInstance.create(ISampleAppService.class);
 
     }
+
+
 
 
 }

@@ -20,12 +20,16 @@ public  abstract  class BaseActivity<B extends ViewDataBinding> extends AppCompa
     protected void setUpToolbar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar()
+                    .setDisplayShowHomeEnabled(true);
+            getSupportActionBar()
+                    .setDisplayHomeAsUpEnabled(true);
         }
     }
 
     protected void replaceFragment(BaseFragment fragment, int resId) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getSupportFragmentManager()
+                .beginTransaction();
         transaction.replace(resId, fragment);
         transaction.commit();
     }

@@ -2,10 +2,8 @@ package me.gunna.exemploteste.androidapp.viewmodel;
 
 
 import me.gunna.exemploteste.androidapp.ui.fragments.BaseFragment;
-import me.gunna.exemploteste.androidapp.ui.fragments.BerriesFragment;
-import me.gunna.exemploteste.androidapp.ui.fragments.MovesFragment;
-import me.gunna.exemploteste.androidapp.ui.fragments.PokedexFragment;
-import me.gunna.exemploteste.androidapp.ui.fragments.PokemonsFragment;
+import me.gunna.exemploteste.androidapp.ui.fragments.ChartFragment;
+import me.gunna.exemploteste.androidapp.ui.fragments.ProductsFragment;
 import rx.Observable;
 import rx.subjects.ReplaySubject;
 
@@ -16,29 +14,26 @@ import rx.subjects.ReplaySubject;
 
 public class HomeScreenViewModel extends ViewModel {
     private final ReplaySubject<BaseFragment> mMenuOptionSubject = ReplaySubject.create();
-    private static final int FRAG_ID_POKEMONS =  0;
-    private static final int FRAG_ID_POKEDEX  =  1;
-    private static final int FRAG_ID_MOVES    =  2;
-    private static final int FRAG_ID_BERRIES  =  3;
+    private static final int FRAG_ID_CHART =  0;
+    private static final int FRAG_ID_PRODUCT =  1;
+
 
     private final BaseFragment[] mMenuFragments = {
-            PokemonsFragment.newInstance(),
-            PokedexFragment.newInstance(),
-            MovesFragment.newInstance(),
-            BerriesFragment.newInstance()
+            ChartFragment.newInstance(),
+            ProductsFragment.newInstance()
     };
 
     public Observable<BaseFragment> getMenuOptionObservable(){return mMenuOptionSubject.asObservable();}
 
-    public HomeScreenViewModel() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_POKEMONS]);}
+    public HomeScreenViewModel() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_CHART]);}
 
-    public void onClickPokemon() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_POKEMONS]);}
+    public void onClickChart() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_CHART]);}
 
-    public void onClickPokedex() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_POKEDEX]);}
+    public void onClickProducts() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_PRODUCT]);}
 
-    public void onClickMoves()   {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_MOVES]);}
+    public void onClickLogout()   {}
 
-    public void onClickBerries() {mMenuOptionSubject.onNext(mMenuFragments[FRAG_ID_BERRIES]);}
+
 
     @Override
     public void destroy() {

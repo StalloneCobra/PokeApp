@@ -6,7 +6,7 @@
             type="me.gunna.exemploteste.androidapp.viewmodel.HomeScreenViewModel"/>
     </data>
 <LinearLayout
-    android:layout_width="300dp"
+    android:layout_width="200dp"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:clickable="true"
@@ -22,9 +22,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.onClickPokemon()}"
+        android:onClick="@{() -> viewModel.onClickChart()}"
         android:padding="16dp"
-        android:text="@string/pokemons"
+        android:text="@string/hist_rico_btc"
 
         android:textColor="@android:color/white"
         android:textSize="16sp" />
@@ -35,9 +35,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.onClickPokedex()}"
+        android:onClick="@{() -> viewModel.onClickProducts()}"
         android:padding="16dp"
-        android:text="@string/poked_x"
+        android:text="@string/produtos"
 
         android:textColor="@android:color/white"
         android:textSize="16sp" />
@@ -48,30 +48,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.onClickBerries()}"
+        android:onClick="@{() -> viewModel.onClickLogout()}"
         android:padding="16dp"
-        android:text="@string/berries"
+        android:text="@string/logout"
         android:textColor="@android:color/white"
         android:textSize="16sp" />
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:background="@android:color/white"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.onClickMoves()}"
-        android:padding="16dp"
-        android:text="@string/moves"
-        android:textColor="@android:color/white"
-        android:textSize="16sp" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/white"/>
-
-
-
 </LinearLayout>
 
 </layout>
