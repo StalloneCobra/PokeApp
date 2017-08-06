@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import me.gunna.exemploteste.androidapp.app.SampleApp;
+
 
 
 /**
@@ -18,10 +18,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new Handler().postDelayed(() -> {
-            if(SampleApp.getsInstance().isLogged())
-                MainActivity.start(this);
-            else
-                LoginActivity.start(this);
+            MainActivity.start(this);
             finish();
         },3000);
     }

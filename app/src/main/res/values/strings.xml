@@ -14,4 +14,6 @@
     <string name="title_product">Produtos</string>
     <string name="title_product_list">Lista de produtos</string>
     <string name="error_internet">Ops! Parece que você está desconectado!</string>
+    <string name="login">Login</string>
+    <string name="account">Conta</string>
 </resources>
