@@ -41,8 +41,9 @@ public class BtcHistoryResponse {
         for (Map.Entry<String, JsonElement> i : mHistory.entrySet()) {
             v[++x] = Float.parseFloat(i.getValue().getAsString());
         }
-        int j = 0;
-        for(int i = quant  ; i >0; i--, j++)
+        int j = quant -1 ;
+        for(int i = (mHistory.entrySet().size()  - 1) ;
+            i > ((mHistory.entrySet().size() -1) - quant); i--, j--)
             if (j < quant)
                 values[j] = v[i];
         return values;
@@ -55,8 +56,9 @@ public class BtcHistoryResponse {
         for (Map.Entry<String, JsonElement> i : mHistory.entrySet()) {
             d[++x] = i.getKey().split("-")[2];
         }
-        int j = 0;
-        for(int i = quant  ; i >0; i--, j++)
+        int j = quant -1;
+        for(int i = (mHistory.entrySet().size() - 1)  ;
+            i > ((mHistory.entrySet().size() -1) - quant); i--, j--)
             if (j < quant)
                 dates[j] = d[i];
 

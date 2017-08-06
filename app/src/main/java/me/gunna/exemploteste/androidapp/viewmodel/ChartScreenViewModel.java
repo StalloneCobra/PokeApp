@@ -30,7 +30,7 @@ public class ChartScreenViewModel extends ViewModel {
     private BtcHistoryResponse mResponse;
 
     public ChartScreenViewModel() {
-
+        mLastUpdate.set(" ");
     }
 
 
